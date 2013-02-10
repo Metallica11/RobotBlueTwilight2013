@@ -80,7 +80,7 @@ public class BTVision {
                  * level directory in the flash memory on the cRIO. The file name in this case is "testImage.jpg"
                  */
                 ColorImage image = camera.getImage();     // comment if using stored images
-                BinaryImage thresholdImage = image.thresholdHSV(60, 100, 90, 255, 20, 255);   // keep only red objects
+                BinaryImage thresholdImage = image.thresholdHSV(10,60,200,255,200,255);   // keep only green objects
                 BinaryImage convexHullImage = thresholdImage.convexHull(false);          // fill in occluded rectangles
                 BinaryImage filteredImage = convexHullImage.particleFilter(cc);           // filter out small particles
                 
